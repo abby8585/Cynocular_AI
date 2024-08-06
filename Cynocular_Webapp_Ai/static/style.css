@@ -18,8 +18,8 @@ header {
   right: 20px; /* Ensures space for the login icon on the far-right */
   display: flex;
   align-items: center;
-  font-size: 3rem;
-  color: gray;
+  font-size: 2rem;
+  color: skyblue;
   /* Additional flex properties for alignment */
   justify-content: space-between;
 }
@@ -27,17 +27,17 @@ header {
 /* Binocular Icon Styling */
 #binocular-icon {
   position: absolute;
-  top: -10px; /* Adjusts the icon to overlap with the first letter */
+  top: -20px; /* Adjusts the icon to overlap with the first letter */
   left: 0;
-  width: 50px;
-  height: 50px;
+  width: 160px;
+  height: 160px;
 }
 
 /* Header Text Styling */
 .header-text {
-  position: relative;
+  position: absolute;
   display: inline-block;
-  padding-left: 60px; /* Space for the binocular icon */
+  padding-left: 50px; /* Space for the binocular icon */
 }
 
 /* Login Icon Styling */
@@ -52,7 +52,7 @@ header {
 
 /* Input Container */
 .input-container {
-  background-color: skyblue; /* Prompt background color set to sky blue */
+  background-color: rgb(194, 214, 233); /* Prompt background color set to sky blue */
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -78,7 +78,6 @@ header {
 /* File Upload Styles */
 .file-upload-container {
   width: 100%;
-  border: 2px dashed #ccc;
   border-radius: 4px;
   padding: 20px;
   text-align: center;

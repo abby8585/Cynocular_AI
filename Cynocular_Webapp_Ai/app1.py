@@ -1,15 +1,16 @@
 from flask import Flask, request, jsonify
 import requests
+import os
 
 app = Flask(__name__)
 
 # GPT-4 API settings
 GPT_API_URL = 'https://api.openai.com/v1/engines/gpt-4/completions'
-GPT_API_KEY = 'your-gpt-api-key'  # Replace with your GPT-4 API key
+GPT_API_KEY = os.getenv('GPT_API_KEY')  
 
 # VirusTotal API settings
 VT_API_URL = 'https://www.virustotal.com/api/v3'
-VT_API_KEY = 'your-vt-api-key'  # Replace with your VirusTotal API key
+VT_API_KEY = os.getenv('VT_API_KEY')  
 
 def summarize_with_gpt(text):
     headers = {
@@ -17,8 +18,9 @@ def summarize_with_gpt(text):
         'Content-Type': 'application/json'
     }
     payload = {
-        'prompt': f"Summarize the following cybersecurity report and provide relevant analysis:\n\n{text}",
-        'max_tokens': 200
+        'prompt': f"Summarize the following cybersecurity report and provide relevant cybersecurity-related analysis:\n\n{text}",
+        'max_tokens': 400,
+        'temperature': 0.3
     }
 
     response = requests.post(GPT_API_URL, json=payload, headers=headers)
